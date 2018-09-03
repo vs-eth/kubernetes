@@ -1,0 +1,5 @@
+kubernetes-hyperkube (1.11.2-0) unstable; urgency=medium
+
+  * Initial upload
+
+ -- Maximilian Falkenstein <maximilian.falkenstein@vseth.ethz.ch>  Mon, 03 Sep 2018 10:34:58 +0200

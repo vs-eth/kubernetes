@@ -1,0 +1,9 @@
+autoreconf.after
+autoreconf.before
+*.log
+*.substvars
+tmp
+kubernetes-hyperkube
+.debhelper
+debhelper-build-stamp
+files
