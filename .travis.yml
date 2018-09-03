@@ -1,6 +1,10 @@
 sudo: required
+language: go
 notifications:
   email: false
+
+go:
+  - "1.10.x"
 
 script:
 - dpkg-buildpackage -us -uc -b
