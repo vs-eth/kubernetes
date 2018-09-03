@@ -6,5 +6,5 @@ script:
 - dpkg-buildpackage -us -uc -b
 
 install:
-- sudo apt update && sudo apt install -y rsync golang-go binutils dpkg-dev
+- sudo apt update && sudo apt install -yq rsync golang-go binutils dpkg-dev build-essential fakeroot
 
