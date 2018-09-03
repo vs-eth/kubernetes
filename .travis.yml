@@ -4,7 +4,7 @@ notifications:
   email: false
 
 go:
-  - "1.10.x"
+- 1.10.x
 
 script:
 - dpkg-buildpackage -us -uc -b
@@ -12,3 +12,12 @@ script:
 install:
 - sudo apt update && sudo apt install -yq rsync golang-go binutils dpkg-dev build-essential fakeroot debhelper
 
+deploy:
+  provider: releases
+  api_key:
+    secure: DzzL6hvN/8z+GBeHu+OFfwmmr62i0satY0h1jNORdKWGY+46L8FAb5R5VDta0ZIVe8XAUBrjTUCufYNQJQo32MLs6TVMpv/A//x4UNG+Gw2WraVBX10xggKuiX5IFc0Rz8UaRwqgRaJkRK9xCtLOzJko03lTB4JEt5n0EmnB1oBifKiYw4JyBupLVRyx+sN0Bjg0Md1c10qQ//yvm1dcGBWdI6dBTWjOukqCjvsJ1mUyVG2QgWFwFc8cg92gjuej7hXtZptfa9cEYUgy3ldtsbl7Vpi5RbIt3dWMku6tNNQeAGEEui+6NwXoPAxWdE7QkarcD7xUXFVBXAwuD3fk8VKSvE5NRR50uoWa8XgB+Uk8ou2JpLu4JU30nBQc1HA79ynAWZzvGVST531ejn8xMfjNWqPFy2YUZTKMJdaSuWhCbWqvtGPz8rGQ09OjbzmqNY813IUiTuwSS+i1AfJSkxvSK8TFMU8AlCeTldOLOXdb30nD9mdum2Kq1mSILSvB1TJABgmsAVl8fwg+eEr86zab/GO9mNCNiksW8Dfp8YKipcjeNodS6ANWYnVOF6TGePr9k+1UG1Tg1v0JygZIvGnH8V7MOSJuHbf/L2drKkE27a0M6HO4H5iz0VxiyjhhPSOnE5awIgdfEA4yzqNgSzxBq94NW9tCx3Kv4WZPvQw=
+  file_glob: true
+  file: "../kubernetes-hyperkube*.deb"
+  on:
+    repo: vs-eth/kubernetes
+    tags: true
