@@ -4,6 +4,7 @@ autoreconf.before
 *.substvars
 tmp
 kubernetes-hyperkube
+kubernetes-hyperkube-kubectl
 .debhelper
 debhelper-build-stamp
 files

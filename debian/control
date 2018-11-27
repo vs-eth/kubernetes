@@ -2,7 +2,7 @@ Source: kubernetes-hyperkube
 Section: utils
 Priority: optional
 Maintainer: Maximilian Falkenstein <maximilian.falkenstein@vseth.ethz.ch>
-Build-Depends: debhelper (>=9), golang-go, rsync, binutils
+Build-Depends: debhelper (>=9), golang-go, rsync, binutils, dh-linktree
 Standards-Version: 3.9.8
 Vcs-Git: https://github.com/vs-eth/kubernetes.git
 Vcs-Browser: https://github.com/vs-eth/kubernetes
@@ -11,3 +11,9 @@ Package: kubernetes-hyperkube
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: kubernetes-hyperkube contains the Kubernetes multi-call hyperkube binary
+
+Package: kubernetes-hyperkube-kubectl
+Architecture: any
+Depends: kubernetes-hyperkube
+Conflicts: kubectl
+Description: Use kubernetes-hyperkube to provide kubectl
